@@ -1,4 +1,5 @@
 import { AlertCircle, Users, TrendingDown } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 
 const problems = [
   {
@@ -23,33 +24,38 @@ export const Problem = () => {
     <section className="py-24 sm:py-32">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">
-            The Challenge
-          </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Why pipeline growth is hard for service firms
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Hiring internally is expensive and slow. Most agencies chase vanity metrics. You need a strategic partner who owns pipeline performance.
-          </p>
+          <FadeIn>
+            <p className="text-sm font-medium uppercase tracking-widest text-primary">
+              The Challenge
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              Why pipeline growth is hard for service firms
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Hiring internally is expensive and slow. Most agencies chase vanity metrics. You need a strategic partner who owns pipeline performance.
+            </p>
+          </FadeIn>
         </div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.15}>
           {problems.map((problem) => (
-            <div 
-              key={problem.title}
-              className="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:bg-secondary/50"
-            >
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <problem.icon className="h-6 w-6" />
+            <StaggerItem key={problem.title}>
+              <div className="group h-full rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:bg-secondary/50">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <problem.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 text-xl font-semibold">{problem.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  {problem.description}
+                </p>
               </div>
-              <h3 className="mt-6 text-xl font-semibold">{problem.title}</h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {problem.description}
-              </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
