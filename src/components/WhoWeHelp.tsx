@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/motion";
 
 const criteria = [
   "Generate £1M+ in annual revenue (or approaching it)",
@@ -21,53 +22,63 @@ export const WhoWeHelp = () => {
       <div className="container mx-auto px-6">
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">
-              Who We Work With
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Built for ambitious B2B service firms
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              We partner with UK and EU-based firms that are serious about building predictable revenue. If that's you, we should talk.
-            </p>
+            <FadeIn>
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
+                Who We Work With
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                Built for ambitious B2B service firms
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                We partner with UK and EU-based firms that are serious about building predictable revenue. If that's you, we should talk.
+              </p>
+            </FadeIn>
 
-            <ul className="mt-10 space-y-4">
+            <StaggerContainer className="mt-10 space-y-4" staggerDelay={0.08}>
               {criteria.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-                    <Check className="h-3 w-3" />
+                <StaggerItem key={item}>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                      <Check className="h-3 w-3" />
+                    </div>
+                    <span className="text-muted-foreground">{item}</span>
                   </div>
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
+                </StaggerItem>
               ))}
-            </ul>
+            </StaggerContainer>
           </div>
 
           <div className="flex items-center">
-            <div className="w-full rounded-2xl border border-border bg-card p-8 sm:p-10">
-              <h3 className="text-xl font-semibold">Typical Sectors</h3>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {sectors.map((sector) => (
-                  <div 
-                    key={sector}
-                    className="rounded-lg bg-secondary/50 px-4 py-3 text-center font-medium"
-                  >
-                    {sector}
-                  </div>
-                ))}
+            <ScaleIn delay={0.2} className="w-full">
+              <div className="w-full rounded-2xl border border-border bg-card p-8 sm:p-10">
+                <h3 className="text-xl font-semibold">Typical Sectors</h3>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {sectors.map((sector) => (
+                    <div 
+                      key={sector}
+                      className="rounded-lg bg-secondary/50 px-4 py-3 text-center font-medium"
+                    >
+                      {sector}
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-8 pt-8 border-t border-border">
+                  <p className="text-sm text-muted-foreground">Investment</p>
+                  <p className="mt-2 text-3xl font-bold">
+                    £6,000 – £9,000
+                    <span className="text-lg font-normal text-muted-foreground">/month</span>
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    3-month minimum engagement
+                  </p>
+                </div>
               </div>
-              
-              <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground">Investment</p>
-                <p className="mt-2 text-3xl font-bold">
-                  £6,000 – £9,000
-                  <span className="text-lg font-normal text-muted-foreground">/month</span>
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  3-month minimum engagement
-                </p>
-              </div>
-            </div>
+            </ScaleIn>
           </div>
         </div>
       </div>
