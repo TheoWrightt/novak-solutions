@@ -12,7 +12,7 @@ export const CTA = () => {
               Ready to build your pipeline?
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Book a fit call to discuss your growth goals. If we're aligned, we'll show you exactly how we'd build your demand generation system.
+              Book a discovery call to discuss your growth goals. If we're aligned, we'll show you exactly how we'd build your demand generation system.
             </p>
             
             <Button 
@@ -20,14 +20,14 @@ export const CTA = () => {
               className="group mt-10 bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-lg font-medium"
               asChild
             >
-              <a href="mailto:hello@novaksolutions.co.uk">
-                Book Your Fit Call
+              <a href="mailto:info@novaksolutions.co.uk">
+                Book Your Discovery Call
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
             <p className="mt-6 text-sm text-muted-foreground">
-              No obligation. Just a conversation to see if we're the right fit.
+              No obligation. Just a conversation to see if we're the right partner.
             </p>
           </div>
         </ScaleIn>

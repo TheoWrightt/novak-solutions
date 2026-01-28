@@ -61,7 +61,7 @@ export const Hero = () => {
             onClick={scrollToContact}
             className="group bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-medium glow"
           >
-            Book a Fit Call
+            Book a Discovery Call
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>
