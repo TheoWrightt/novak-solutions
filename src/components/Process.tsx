@@ -3,7 +3,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
 const steps = [
   {
     number: "01",
-    title: "Fit Call",
+    title: "Discovery Call",
     description: "A focused conversation to understand your goals, current pipeline, and whether we're the right partner."
   },
   {
