@@ -17,7 +17,7 @@ export const CTA = () => {
             
             <Button 
               size="lg"
-              className="group mt-10 bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-lg font-medium"
+              className="group mt-10 bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-10 py-6 text-base sm:text-lg font-medium"
               asChild
             >
               <a href="mailto:info@novaksolutions.co.uk">
